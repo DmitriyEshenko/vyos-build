@@ -46,7 +46,15 @@ To build a VyOS 1.2.0 image, you need Debian 8 "Jessie" environment (with
 jessie-backports repository).
 
 If you are working on a Debian Jessie machine, no special preparation is needed,
-you only need to enable jessie-backports and install build dependencies.
+you only need to enable jessie-backports and install build dependencies. The jessie-backports archived on archive.debian.org. Also you need downloads the package lists from the repositories with next params `apt-get -o Acquire::Check-Valid-Until=false update`. Otherwise, you must get error about repository expirity.
+
+Example: /etc/apt/sources.list
+
+```bash
+deb http://archive.debian.org/debian/ jessie-backports main contrib non-free
+deb-src http://archive.debian.org/debian/ jessie-backports main contrib non-free
+
+```
 
 If you are interested which individual packages are required please check our
 [Dockerfile](docker/Dockerfile) which holds the most complete documentation
