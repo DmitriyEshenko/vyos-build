@@ -3,3 +3,4 @@ Path=pci-0000:05:00.3*
 
 [Link]
 Name=eth8
+Alias=LAN8
